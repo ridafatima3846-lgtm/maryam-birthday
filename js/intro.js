@@ -1,6 +1,7 @@
 /* BIRDI — Cinematic opening animation
    Full-screen black with glowing red light streaks that converge
-   toward the center, where the BIRDI logo is revealed. */
+   toward the center, where the NETFLIX logo is revealed.
+   Starts only after the login gate (window.CinematicIntro.start()). */
 (function () {
   "use strict";
 
@@ -26,7 +27,8 @@
 
   var DURATION = 2800;        /* total intro length (ms) */
   var REVEAL_START = 1450;    /* when the logo begins to appear */
-  var t0 = performance.now();
+  var t0 = 0;
+  var raf = null;
 
   function rand(a, b) { return a + Math.random() * (b - a); }
 
@@ -55,8 +57,6 @@
     });
     if (streaks.length > MAX) streaks.shift();
   }
-
-  for (var i = 0; i < 48; i++) spawn();
 
   function drawStreaks(dt) {
     ctx.globalCompositeOperation = "lighter";
@@ -133,7 +133,7 @@
   }
 
   /* ---------------- frame loop ---------------- */
-  var last = performance.now();
+  var last = 0;
   function frame(now) {
     var t = now - t0;
     var dt = Math.min(0.05, (now - last) / 1000);
@@ -166,18 +166,32 @@
     drawGrain();
 
     if (t < DURATION) {
-      requestAnimationFrame(frame);
+      raf = requestAnimationFrame(frame);
     } else {
+      raf = null;
       ctx.globalCompositeOperation = "source-over";
       ctx.fillStyle = "rgba(0,0,0,0.14)";
       ctx.fillRect(0, 0, W, H);
     }
   }
 
-  if (ctx) {
-    requestAnimationFrame(frame);
+  /* ---------------- start (called after login) ---------------- */
+  function start() {
+    if (raf) return; /* already running */
+    t0 = performance.now();
+    last = t0;
+    revealed = false;
+    streaks = [];
+    for (var i = 0; i < 48; i++) spawn();
+    if (ctx) {
+      ctx.globalCompositeOperation = "source-over";
+      ctx.fillStyle = "rgba(0,0,0,1)";
+      ctx.fillRect(0, 0, W, H);
+      raf = requestAnimationFrame(frame);
+    }
+    /* safety: always trigger the logo reveal even without a canvas */
+    window.setTimeout(function () { checkReveal(REVEAL_START); }, REVEAL_START);
   }
 
-  /* safety: always trigger the logo reveal even without a canvas */
-  window.setTimeout(function () { checkReveal(REVEAL_START); }, REVEAL_START);
+  window.CinematicIntro = { start: start };
 })();

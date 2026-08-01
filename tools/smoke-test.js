@@ -61,9 +61,22 @@ async function runLockedSuite() {
   const click = (el) => { const e = new window.MouseEvent("click", { bubbles: true, cancelable: true }); el.dispatchEvent(e); };
   const hash = () => (window.location.hash || "").replace(/^#\/?/, "");
 
-  await waitFor(() => window.BIRDI_APP && (($("#screen-soon") && $("#screen-soon").classList.contains("active")) || ($("#screen-home") && $("#screen-home").classList.contains("active"))), 12000);
+  await waitFor(() => window.BIRDI_APP && $("#loginPass"), 12000);
   const App = window.BIRDI_APP;
   const CONFIG = window.BIRDI_DATA.CONFIG;
+
+  // ---- login gate (gates the whole site in normal mode)
+  check("login: gate is shown on open", !!$("#login") && !$("#login").classList.contains("done"));
+  const loginInput = $("#loginPass");
+  loginInput.value = "wrongpass";
+  click($("#loginBtn"));
+  await sleep(150);
+  check("login: wrong password rejected", ($("#loginError").textContent || "").indexOf("Wrong") !== -1);
+  loginInput.value = CONFIG.loginPass || "Maryam12";
+  click($("#loginBtn"));
+  check("login: correct password accepted", $("#login").classList.contains("done"));
+
+  await waitFor(() => ($("#screen-soon") && $("#screen-soon").classList.contains("active")) || ($("#screen-home") && $("#screen-home").classList.contains("active")), 12000);
 
   if (!CONFIG.locked) {
     check("locked: not locked — full site opens by default", $("#screen-home").classList.contains("active"), "hash=" + hash());

@@ -50,6 +50,8 @@
     // open — perfect until release day. Set `locked: false` to open
     // the full experience.
     locked: false,
+    // Password required on the login gate before the site opens
+    loginPass: "Maryam12",
     // A short line shown on every page (set to "" to hide)
     banner: "All for you to watch on your birthday day",
     comingSoon: {

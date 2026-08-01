@@ -52,14 +52,63 @@
       };
       window.addEventListener("hashchange", this.route.bind(this));
 
-      /* loader sequence */
-      var loader = $("#loader");
+      /* everyday banner */
       var bn = $("#allBannerText");
       if (bn) {
         var bannerText = (CONFIG.banner || "").trim();
         bn.textContent = bannerText;
         $("#allBanner").style.display = bannerText ? "" : "none";
       }
+
+      /* login gate first, then the cinematic intro */
+      this.wireLogin();
+    },
+
+    /* ================= LOGIN GATE ================= */
+    wireLogin: function () {
+      var self = this;
+      if (this.preview) {
+        /* preview mode (?preview=1) skips the login screen */
+        this.runIntro();
+        return;
+      }
+      var el = $("#login");
+      var input = $("#loginPass");
+      var btn = $("#loginBtn");
+      var err = $("#loginError");
+      var PASS = String(CONFIG.loginPass || "Maryam12");
+
+      function attempt() {
+        if ((input.value || "").trim() === PASS) {
+          if (err) err.textContent = "";
+          if (el) {
+            el.classList.add("done");
+            window.setTimeout(function () { el.style.display = "none"; }, 800);
+          }
+          self.runIntro();
+        } else {
+          if (err) err.textContent = "Wrong password. Try again.";
+          if (input) {
+            input.value = "";
+            input.classList.remove("shake");
+            void input.offsetWidth; /* restart animation */
+            input.classList.add("shake");
+            input.focus();
+          }
+        }
+      }
+
+      if (btn) btn.addEventListener("click", attempt);
+      if (input) {
+        input.addEventListener("keydown", function (e) { if (e.key === "Enter") attempt(); });
+        window.setTimeout(function () { input.focus(); }, 300);
+      }
+    },
+
+    /* cinematic intro + loader sequence (after login or in preview) */
+    runIntro: function () {
+      var loader = $("#loader");
+      if (window.CinematicIntro) window.CinematicIntro.start();
       window.setTimeout(function () {
         loader.classList.add("done");
         window.setTimeout(function () {

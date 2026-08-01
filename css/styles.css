@@ -68,6 +68,56 @@ button { font-family: inherit; }
   100% { opacity: 0; }
 }
 
+/* ================= LOGIN GATE ================= */
+.login {
+  position: fixed; inset: 0; z-index: 1500;
+  background: #000;
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+.login.done { opacity: 0; visibility: hidden; }
+.login-bg {
+  position: absolute; inset: 0; background-size: cover; background-position: center;
+  filter: blur(20px) brightness(0.4); transform: scale(1.12);
+}
+.login-shade {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 42%, rgba(7, 7, 10, 0.1), rgba(7, 7, 10, 0.88) 80%);
+}
+.login-card {
+  position: relative; z-index: 2; width: min(420px, 88vw);
+  background: rgba(10, 10, 14, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px; padding: 44px 40px; text-align: center;
+  backdrop-filter: blur(8px); box-shadow: 0 30px 90px rgba(0, 0, 0, 0.6);
+}
+.login-logo { height: 42px; width: auto; margin: 0 auto 26px; }
+.login-title { color: #fff; font-family: var(--serif); font-size: 26px; font-weight: 700; margin-bottom: 6px; }
+.login-sub { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+.login-card input {
+  width: 100%; padding: 14px 16px; border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.07); color: #fff; font-size: 16px;
+  outline: none; text-align: center; letter-spacing: 1px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.login-card input:focus { border-color: var(--accent-1); background: rgba(255, 255, 255, 0.1); }
+.login-card input::placeholder { color: #6a6a78; letter-spacing: 0; }
+.login-btn { width: 100%; margin-top: 16px; }
+.login-error { color: #ff5c66; font-size: 13px; margin-top: 14px; min-height: 18px; }
+.login-card input.shake { animation: loginShake 0.4s ease; }
+@keyframes loginShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+@media (max-width: 520px) {
+  .login-card { padding: 34px 26px; }
+  .login-logo { height: 34px; margin-bottom: 20px; }
+  .login-title { font-size: 22px; }
+  .login-sub { font-size: 13px; margin-bottom: 18px; }
+}
+
 /* ================= SCREENS ================= */
 .screen { display: none; }
 .screen.active { display: block; }
@@ -183,7 +233,7 @@ button { font-family: inherit; }
 .row-track {
   display: flex; gap: 14px; overflow-x: auto;
   scroll-snap-type: x mandatory; padding: 8px 4vw 22px;
-  scrollbar-width: none;
+  scrollbar-width: none; -webkit-overflow-scrolling: touch;
 }
 .row-track::-webkit-scrollbar { display: none; }
 .row-arrow {
@@ -247,7 +297,7 @@ button { font-family: inherit; }
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(7, 7, 10, 0.62) 0%, rgba(7, 7, 10, 0.82) 45%, var(--bg) 93%);
 }
-.details-top { position: relative; z-index: 2; padding: 24px 4vw; }
+.details-top { position: relative; z-index: 2; padding: 110px 4vw 0; }
 .details-content { position: relative; z-index: 2; max-width: 900px; padding: 7vh 4vw 0; }
 .d-badge { color: var(--accent-1); letter-spacing: 5px; font-size: 12px; font-weight: 700; }
 .d-title { font-family: var(--serif); color: #fff; font-size: clamp(40px, 6.5vw, 88px); margin: 14px 0 10px; line-height: 1.04; font-weight: 800; letter-spacing: -0.5px; }
@@ -320,8 +370,9 @@ button { font-family: inherit; }
 
 /* ================= PHOTO SLIDESHOW ================= */
 .photo-wrap { min-height: 100vh; position: relative; }
-.photo-top { position: absolute; z-index: 5; top: 0; left: 0; right: 0; padding: 22px 4vw; }
+.photo-top { position: absolute; z-index: 5; top: 0; left: 0; right: 0; padding: 100px 4vw 0; }
 .photo-stage { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #08080c; }
+@supports (height: 100svh) { .photo-stage { height: 100svh; } }
 .photo-img {
   position: absolute; inset: 0; background-size: contain; background-position: center;
   transition: opacity 0.28s ease; animation: kenburns 18s ease-in-out infinite alternate;
@@ -646,6 +697,9 @@ button { font-family: inherit; }
   .row-arrow { display: none !important; }
   .photo-nav { width: 46px; height: 46px; font-size: 24px; }
   .p-volslider { width: 64px; }
+  .grid .card, .search-results .card { width: auto; }
+  .d-video-play svg { width: 60px; height: 60px; }
+  .d-actions .btn { flex: 1 1 130px; justify-content: center; }
 }
 @media (max-width: 520px) {
   .hero { min-height: 0; flex-direction: column; padding-top: 106px; }
@@ -682,6 +736,44 @@ button { font-family: inherit; }
   .nav-logo { height: 30px; }
   .final-title { font-size: 34px; }
   .photo-caption { margin-top: 42vh; }
+  .details-top { padding-top: 96px; }
+  .photo-top { padding-top: 88px; }
+  .details-content { padding-top: 3vh; }
+  .d-title { font-size: clamp(32px, 8.5vw, 44px); }
+  .d-video { margin: 3vh auto 4vh; }
+  .d-video.vertical { height: 70vh; }
+  .ep-item { padding: 8px; }
+  .bday-content { padding-top: 96px; }
+  .screen-soon .soon-content { padding-top: 8vh; padding-bottom: 40px; }
+  .screen-soon .soon-label { margin-bottom: 18px; }
+  .screen-soon .soon-date { margin: 2px 0 14px; }
+  .screen-soon .soon-note { font-size: 14px; }
+  .screen-soon .soon-play { margin-top: 22px; }
+  .screen-soon .soon-line { margin-top: 22px; }
+  #secretOverlay .secret-card,
+  #secretOverlay .secret-reveal { justify-content: flex-start; padding: 11vh 24px 44px; overflow-y: auto; }
+  .secret-msg p { font-size: 15px; }
+  .grid { gap: 14px 10px; }
+  .mem-chip { padding: 7px 13px; font-size: 12px; }
+  .profile-avatar { width: 140px; height: 140px; }
+  .related-row { margin-top: 30px; }
+  .p-teaser { padding-bottom: max(70px, 12vh); }
+}
+@media (max-width: 380px) {
+  .hero-title { font-size: clamp(32px, 11vw, 44px); }
+  .hero-buttons .btn { padding: 12px 10px; font-size: 12.5px; }
+  .card { width: 128px; }
+  .grid { grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 12px 8px; }
+  .search-results { grid-template-columns: repeat(auto-fill, minmax(126px, 1fr)); }
+  .d-title { font-size: clamp(28px, 9vw, 36px); }
+  .d-actions .btn { font-size: 13px; padding: 11px 14px; }
+  .d-video-play svg { width: 52px; height: 52px; }
+  .profile-avatar { width: 130px; height: 130px; }
+  .profile-name { font-size: 19px; }
+  .es-grid { grid-template-columns: repeat(auto-fill, minmax(128px, 1fr)); gap: 10px; }
+  .final-title { font-size: 30px; }
+  .bday-title { font-size: clamp(28px, 10vw, 38px); }
+  .soon-title { letter-spacing: 2px; }
 }
 
 /* ================= EVERY-PAGE BANNER ================= */
