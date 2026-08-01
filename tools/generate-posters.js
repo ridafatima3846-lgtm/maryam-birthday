@@ -242,8 +242,8 @@ for (const it of items) {
 
 fs.writeFileSync(path.join(OUT, "hero.svg"), heroSVG(), "utf8");
 fs.writeFileSync(path.join(OUT, "logo.svg"), logoSVG(), "utf8");
-fs.writeFileSync(path.join(OUT, "NETFLIX.svg"), logoSVG(), "utf8");
-fs.writeFileSync(path.join(OUT, "NETFLIX-n.svg"), NETFLIXNSVG(), "utf8");
+fs.writeFileSync(path.join(OUT, "netflix.svg"), logoSVG(), "utf8");
+fs.writeFileSync(path.join(OUT, "netflix-n.svg"), NETFLIXNSVG(), "utf8");
 fs.writeFileSync(path.join(OUT, "avatar.svg"), avatarSVG(), "utf8");
 
 console.log("Generated " + (written + 5) + " SVG artworks in assets/posters/");
