@@ -1,0 +1,14 @@
+{
+  "name": "birdi-tools",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Dev tools for the BIRDI birthday platform (poster generation + smoke tests)",
+  "scripts": {
+    "posters": "node generate-posters.js",
+    "test": "node smoke-test.js",
+    "test:player": "node player-test.js"
+  },
+  "devDependencies": {
+    "jsdom": "^24.0.0"
+  }
+}

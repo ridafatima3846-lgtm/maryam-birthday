@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2400" viewBox="0 0 1600 2400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.85" y2="1">
+      <stop offset="0" stop-color="#3b0d11"/>
+      <stop offset="0.55" stop-color="#7b1e2e"/>
+      <stop offset="1" stop-color="#f9a03f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="38%" r="75%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="0.55" stop-color="#ffffff" stop-opacity="0.03"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vig" cx="50%" cy="50%" r="72%">
+      <stop offset="0.6" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.55"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="2400" fill="url(#bg)"/>
+  <circle cx="29.346429037709356%" cy="25.908942549468236%" r="34%" fill="#f9a03f" opacity="0.28"/>
+  <circle cx="76.89681130156312%" cy="64.0078131966311%" r="42%" fill="#3b0d11" opacity="0.4"/>
+  <rect width="1600" height="2400" fill="url(#glow)"/>
+  <circle cx="18.1%" cy="58.0%" r="0.71%" fill="#ffffff" opacity="0.09"/><circle cx="18.5%" cy="57.6%" r="0.71%" fill="#ffffff" opacity="0.09"/><circle cx="17.4%" cy="58.8%" r="0.73%" fill="#ffffff" opacity="0.09"/><circle cx="17.8%" cy="58.4%" r="0.72%" fill="#ffffff" opacity="0.09"/><circle cx="16.6%" cy="59.6%" r="0.69%" fill="#ffffff" opacity="0.09"/><circle cx="17.0%" cy="59.2%" r="0.69%" fill="#ffffff" opacity="0.09"/><circle cx="15.8%" cy="60.3%" r="0.70%" fill="#ffffff" opacity="0.09"/><circle cx="16.2%" cy="59.9%" r="0.70%" fill="#ffffff" opacity="0.09"/><circle cx="15.0%" cy="61.1%" r="0.76%" fill="#ffffff" opacity="0.09"/><circle cx="15.4%" cy="60.7%" r="0.75%" fill="#ffffff" opacity="0.09"/><circle cx="13.3%" cy="45.9%" r="1.25%" fill="#ffffff" opacity="0.14"/><circle cx="12.9%" cy="46.3%" r="1.26%" fill="#ffffff" opacity="0.14"/><circle cx="14.0%" cy="46.7%" r="1.27%" fill="#ffffff" opacity="0.14"/><circle cx="13.6%" cy="47.0%" r="1.27%" fill="#ffffff" opacity="0.14"/>
+  <rect width="1600" height="2400" fill="url(#vig)"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" letter-spacing="8" fill="#ffffff" opacity="0.55" font-size="34">
+    <text x="70" y="96" fill="#e50914" opacity="0.95" font-weight="bold">NETFLIX</text>
+    <text x="1530" y="96" text-anchor="end" opacity="0.7">★ HD</text>
+  </g>
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#ffffff" text-anchor="middle" font-weight="bold" font-size="132">
+    <tspan x="50%" y="-76.6">THINGS I LOVE</tspan><tspan x="50%" y="76.6">ABOUT YOU</tspan>
+  </g>
+  <g text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+    <rect x="670" y="2030" width="260" height="4" rx="2" fill="#ffffff" opacity="0.3"/>
+    <text x="800" y="2140" fill="#ffffff" opacity="0.82" font-size="46" letter-spacing="6">FEELINGS • NO NOTES</text>
+    <text x="800" y="2220" fill="#ffffff" opacity="0.5" font-size="40" letter-spacing="4">2026</text>
+  </g>
+  <text x="800" y="2330" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="34" letter-spacing="6" fill="#ffffff" opacity="0.4">A NETFLIX STORY</text>
+</svg>

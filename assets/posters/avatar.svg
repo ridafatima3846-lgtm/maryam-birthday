@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <defs>
+    <linearGradient id="av" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#33080c"/>
+      <stop offset="1" stop-color="#e50914"/>
+    </linearGradient>
+  </defs>
+  <circle cx="300" cy="300" r="300" fill="url(#av)"/>
+  <circle cx="300" cy="300" r="252" fill="none" stroke="#ffffff" stroke-opacity="0.28" stroke-width="6"/>
+  <circle cx="300" cy="300" r="218" fill="none" stroke="#ffffff" stroke-opacity="0.16" stroke-width="4"/>
+  <text x="300" y="398" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="260" font-weight="bold" fill="#ffffff">M</text>
+  <text x="300" y="472" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="40" letter-spacing="10" fill="#ffffff" opacity="0.7">NETFLIX</text>
+</svg>

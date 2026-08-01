@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NETFLIX — A Birthday Story</title>
+  <meta name="description" content="A NETFLIX-style streaming experience, made just for one special person.">
+  <link rel="icon" type="image/svg+xml" href="assets/posters/NETFLIX-n.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ============ NETFLIX CINEMATIC OPENING ============ -->
+  <div id="loader" class="loader">
+    <canvas id="introCanvas"></canvas>
+    <div class="intro-flash" id="introFlash"></div>
+    <div class="intro-logo" id="introLogo"><img src="assets/posters/NETFLIX.svg" alt="NETFLIX"></div>
+  </div>
+
+  <div id="app">
+
+    <!-- ============ NAVBAR ============ -->
+    <header class="nav" id="navbar">
+      <div class="nav-left">
+        <img class="nav-logo" id="brandLogo" src="assets/posters/NETFLIX.svg" alt="NETFLIX">
+        <nav class="nav-links">
+          <a data-route="home">Home</a>
+          <a data-route="memories">Memories</a>
+          <a data-route="videos">Videos</a>
+          <a data-route="birthday">Birthday</a>
+          <a data-route="list">My List</a>
+        </nav>
+      </div>
+      <div class="nav-right">
+        <button class="icon-btn" id="musicBtn" aria-label="Music" title="Music">
+          <svg class="ic-sound" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05A4.5 4.5 0 0 0 16.5 12zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+          <svg class="ic-mute" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.59 3 3.88-3.88-1.42-1.42L15.17 12l3.88 3.88 1.42-1.42L16.59 12z"/></svg>
+        </button>
+        <button class="icon-btn" id="searchBtn" aria-label="Search" title="Search">
+          <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        </button>
+        <button class="icon-btn" id="profileBtn" aria-label="Profile" title="Profile">
+          <img class="avatar" src="assets/posters/avatar.svg" alt="Profile">
+        </button>
+        <button class="icon-btn hamburger" id="menuBtn" aria-label="Menu">
+          <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a data-route="home">Home</a>
+      <a data-route="memories">Memories</a>
+      <a data-route="videos">Videos</a>
+      <a data-route="birthday">Birthday</a>
+      <a data-route="list">My List</a>
+    </div>
+
+    <!-- everyday banner (all pages) -->
+    <div class="allbanner" id="allBanner"><span class="allbanner-star">★</span> <span id="allBannerText"></span> <span class="allbanner-star">★</span></div>
+
+    <main>
+
+      <!-- ============ COMING SOON (teaser, everything locked) ============ -->
+      <section class="screen screen-soon" id="screen-soon">
+        <img class="soon-backdrop" id="soonBackdrop" alt="">
+        <img class="soon-bg" id="soonBg" alt="">
+        <div class="soon-shade"></div>
+        <div class="soon-grad"></div>
+        <div class="soon-content">
+          <img class="soon-logo" src="assets/posters/NETFLIX.svg" alt="NETFLIX">
+          <div class="soon-label" id="soonLabel"></div>
+          <h1 class="soon-title">COMING SOON</h1>
+          <div class="soon-date" id="soonDate"></div>
+          <p class="soon-note" id="soonNote"></p>
+          <button class="btn btn-play soon-play" id="soonPlay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> WATCH TEASER</button>
+          <div class="soon-line"></div>
+        </div>
+      </section>
+
+      <!-- ============ HOME ============ -->
+      <section class="screen" id="screen-home">
+        <div class="hero">
+          <div class="hero-bg"></div>
+          <div class="hero-fade-top"></div>
+          <div class="hero-grad"></div>
+          <div class="hero-content">
+            <div class="hero-line1"></div>
+            <h1 class="hero-title"></h1>
+            <p class="hero-tagline"></p>
+            <p class="hero-desc"></p>
+            <div class="hero-buttons">
+              <button class="btn btn-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> <span>PLAY</span></button>
+              <button class="btn btn-info"><svg viewBox="0 0 24 24"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg> MORE INFO</button>
+            </div>
+          </div>
+        </div>
+        <div class="rows"></div>
+        <!-- hidden surprise teaser -->
+        <div class="row secret-teaser" id="secretTeaser">
+          <h2 class="row-title">One Last Surprise</h2>
+          <div class="secret-teaser-card">
+            <span class="secret-label">★ DON'T OPEN THIS YET ★</span>
+            <button class="btn btn-play">Open the Surprise</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ MEMORIES ============ -->
+      <section class="screen" id="screen-memories">
+        <div class="page-head">
+          <h1 class="page-title">Memories</h1>
+          <p class="page-sub">Every little moment, filed like films.</p>
+        </div>
+        <div class="mem-chips"></div>
+        <div class="grid mem-grid"></div>
+      </section>
+
+      <!-- ============ VIDEOS ============ -->
+      <section class="screen" id="screen-videos">
+        <div class="page-head">
+          <h1 class="page-title">Videos</h1>
+          <p class="page-sub">The full collection of our story.</p>
+        </div>
+        <div class="grid vid-grid"></div>
+      </section>
+
+      <!-- ============ MY LIST ============ -->
+      <section class="screen" id="screen-list">
+        <div class="page-head">
+          <h1 class="page-title">My List</h1>
+          <p class="page-sub">Saved moments, ready to watch again.</p>
+        </div>
+        <div class="grid list-grid"></div>
+        <div class="list-empty" style="display:none">Your list is empty. Tap “+ My List” on any memory to keep it here.</div>
+      </section>
+
+      <!-- ============ BIRTHDAY SPECIAL ============ -->
+      <section class="screen" id="screen-birthday">
+        <div class="bday-wrap"></div>
+      </section>
+
+      <!-- ============ PROFILE ============ -->
+      <section class="screen" id="screen-profile">
+        <div class="profile-wrap">
+          <h1>Who's watching?</h1>
+          <div class="profile-card" id="profileCard">
+            <img class="profile-avatar" src="assets/posters/avatar.svg" alt="Profile">
+            <span class="profile-name"></span>
+            <span class="profile-sub"></span>
+            <span class="profile-badge">★ NETFLIX MEMBER</span>
+          </div>
+          <button class="btn btn-play profile-start"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Start Watching</button>
+          <p class="profile-hint"></p>
+        </div>
+      </section>
+
+      <!-- ============ FINAL ============ -->
+      <section class="screen" id="screen-final">
+        <div class="final-wrap"></div>
+      </section>
+
+      <!-- ============ DETAILS / PHOTO ============ -->
+      <section class="screen" id="screen-details"><div class="details-wrap"></div></section>
+      <section class="screen" id="screen-photo"><div class="photo-wrap"></div></section>
+
+    </main>
+  </div>
+
+  <!-- ============ SEARCH OVERLAY ============ -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+      <input id="searchInput" type="text" placeholder="Search memories, moments, people…" autocomplete="off">
+      <button class="search-close" id="searchClose" aria-label="Close">✕</button>
+    </div>
+    <div class="search-chips" id="searchChips"></div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+
+  <!-- ============ SECRET SURPRISE OVERLAY ============ -->
+  <div id="secretOverlay"></div>
+
+  <noscript><div style="color:#fff;padding:40px;text-align:center">Please enable JavaScript to watch this birthday story.</div></noscript>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/music.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/intro.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

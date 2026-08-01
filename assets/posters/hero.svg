@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="hbg" x1="0" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#160a0c"/>
+      <stop offset="0.5" stop-color="#33080c"/>
+      <stop offset="1" stop-color="#a50d15"/>
+    </linearGradient>
+    <radialGradient id="hglow" cx="50%" cy="42%" r="70%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.2"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.04"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hvig" cx="50%" cy="50%" r="80%">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.5"/>
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#hbg)"/>
+  <circle cx="21.749770909489545%" cy="22.790427089852848%" r="30%" fill="#a50d15" opacity="0.3"/>
+  <circle cx="77.14092629569139%" cy="71.55185784715039%" r="38%" fill="#160a0c" opacity="0.45"/>
+  <circle cx="51.04955794663391%" cy="67.04670307041302%" r="24%" fill="#a50d15" opacity="0.2"/>
+  <rect width="1920" height="1080" fill="url(#hglow)"/>
+  <circle cx="1.5%" cy="3.8%" r="0.42%" fill="#ffffff" opacity="0.08"/><circle cx="1.9%" cy="3.4%" r="0.42%" fill="#ffffff" opacity="0.08"/><circle cx="0.7%" cy="4.6%" r="0.43%" fill="#ffffff" opacity="0.08"/><circle cx="1.1%" cy="4.2%" r="0.43%" fill="#ffffff" opacity="0.08"/><circle cx="3.0%" cy="2.3%" r="0.44%" fill="#ffffff" opacity="0.09"/><circle cx="3.4%" cy="1.9%" r="0.44%" fill="#ffffff" opacity="0.09"/><circle cx="2.2%" cy="3.0%" r="0.45%" fill="#ffffff" opacity="0.09"/><circle cx="2.6%" cy="2.6%" r="0.44%" fill="#ffffff" opacity="0.09"/><circle cx="4.6%" cy="6.9%" r="0.46%" fill="#ffffff" opacity="0.09"/><circle cx="5.0%" cy="6.5%" r="0.45%" fill="#ffffff" opacity="0.09"/><circle cx="95.9%" cy="90.6%" r="0.69%" fill="#ffffff" opacity="0.19"/><circle cx="95.5%" cy="91.0%" r="0.69%" fill="#ffffff" opacity="0.19"/><circle cx="96.7%" cy="91.4%" r="0.69%" fill="#ffffff" opacity="0.19"/><circle cx="96.3%" cy="91.8%" r="0.70%" fill="#ffffff" opacity="0.19"/><circle cx="97.4%" cy="89.1%" r="0.70%" fill="#ffffff" opacity="0.19"/><circle cx="97.1%" cy="89.5%" r="0.71%" fill="#ffffff" opacity="0.19"/><circle cx="98.2%" cy="89.9%" r="0.71%" fill="#ffffff" opacity="0.20"/><circle cx="97.8%" cy="90.2%" r="0.72%" fill="#ffffff" opacity="0.20"/><circle cx="92.8%" cy="87.5%" r="0.72%" fill="#ffffff" opacity="0.18"/><circle cx="92.4%" cy="87.9%" r="0.72%" fill="#ffffff" opacity="0.18"/><circle cx="38.8%" cy="35.2%" r="0.76%" fill="#ffffff" opacity="0.07"/><circle cx="39.2%" cy="34.8%" r="0.76%" fill="#ffffff" opacity="0.07"/><circle cx="39.6%" cy="36.0%" r="0.77%" fill="#ffffff" opacity="0.07"/><circle cx="40.0%" cy="35.6%" r="0.77%" fill="#ffffff" opacity="0.07"/><circle cx="40.4%" cy="33.6%" r="0.78%" fill="#ffffff" opacity="0.07"/><circle cx="40.8%" cy="33.2%" r="0.78%" fill="#ffffff" opacity="0.07"/>
+  <rect width="1920" height="1080" fill="url(#hvig)"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" letter-spacing="10" fill="#ffffff" opacity="0.6" font-size="40">
+    <text x="80" y="110">NETFLIX</text>
+  </g>
+  <g text-anchor="middle">
+    <text y="420" x="960" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" fill="#ffffff" opacity="0.85" font-size="52" letter-spacing="14">HAPPY BIRTHDAY,</text>
+    <g font-family="Georgia, 'Times New Roman', serif" fill="#ffffff" font-weight="bold" font-size="210">
+      <tspan x="50%" y="0.0">MARYAM</tspan>
+    </g>
+    <text y="745" x="960" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" fill="#ffffff" opacity="0.75" font-size="42" letter-spacing="4">A Special Story Made Just For You</text>
+  </g>
+</svg>
