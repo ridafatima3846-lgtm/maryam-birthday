@@ -1,0 +1,9 @@
+# Serve SVG with the correct MIME type (fixes missing logo/posters)
+AddType image/svg+xml svg svgz
+AddEncoding gzip svgz
+
+# Serve MP4 with the correct MIME type
+AddType video/mp4 mp4 m4v
+
+# Prevent directory listing
+Options -Indexes
